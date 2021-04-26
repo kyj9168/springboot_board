@@ -2,6 +2,10 @@ server:
   port: 8090
 
 spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
   datasource:
     url: jdbc:mysql://database-1.cov6nymwzstn.ap-northeast-2.rds.amazonaws.com/board
     username: admin
