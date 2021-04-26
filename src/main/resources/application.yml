@@ -1,0 +1,16 @@
+server:
+  port: 8090
+
+spring:
+  datasource:
+    url: jdbc:mysql://database-1.cov6nymwzstn.ap-northeast-2.rds.amazonaws.com/board
+    username: admin
+    password: admin123!
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
