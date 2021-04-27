@@ -7,11 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>^^Hello</h1>
-<h1>^^Hello</h1>
-<h1>^^Hello</h1>
-<h1>^^Hello</h1>
-<h1>^^Hello</h1>
+<a href="/board">Board</a>
 
 </body>
 </html>

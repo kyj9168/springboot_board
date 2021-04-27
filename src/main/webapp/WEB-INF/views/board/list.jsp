@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Simple Spring Boot Board</title>
+<title>KYJ Board</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
@@ -19,8 +19,8 @@
 <body>
 
 	<div class="container">
-		<h2>Simple Spring Boot Board</h2>
-		<p>TEST Simple Board</p>
+		<h2>게시판</h2>
+		<p>게시판을 작성해 주세요.</p>
 		<div>
 			<a href="/board/create"><button type="button"
 					class="btn btn-primary">Create</button></a>

@@ -29,13 +29,13 @@
 			<textarea rows="20" cols="100" id="contents" readonly="readonly">${board.b_contents}</textarea>
 		</div>
 		<div class="form-group">
-			<label class="form">Created Time : ${board.b_created_date} </label> 
-			<label class="form">Modified Time : ${board.b_update_date} </label>
+			<label class="form">Create Time : ${board.b_created_date} </label>
+			<label class="form">Update Time : ${board.b_update_date} </label>
 		</div>
 		<div>
-		<a href="/board"><button type="button" class="btn btn-info">Move to List</button></a>
-		<a href="/board/update/${board.b_id}"><button type="button" class="btn btn-success">Update</button></a>
-		<button type="button" id="deleteBoard" class="btn btn-danger">Delete</button>
+		<a href="/board"><button type="button" class="btn btn-info">게시판 목록</button></a>
+		<a href="/board/update/${board.b_id}"><button type="button" class="btn btn-success">수정</button></a>
+		<button type="button" id="deleteBoard" class="btn btn-danger">삭제</button>
 		</div>
 	</div>
 </body>

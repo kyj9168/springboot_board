@@ -17,7 +17,7 @@
 </head>
 <body>
 	<div class="container">
-		<h2>Create Board form</h2>
+		<h2>게시판 작성 페이지</h2>
 		<form action="/board/create" method="post">
 			<div class="form-group">
 				<label for="form">Writer:</label> <input type="text"
@@ -34,15 +34,9 @@
 				<textarea rows="20" cols="100" id="contents"
 					placeholder="Enter contents" name="b_contents"></textarea>
 			</div>
-			<div class="form-group form-check">
-				<label class="form-check-label"> <input
-					class="form-check-input" type="checkbox" name="remember">
-					Remember me
-				</label>
-			</div>
-			<button type="submit" class="btn btn-primary">Submit</button>
+			<button type="submit" class="btn btn-primary">작성</button>
 		</form>
-			<a href="/board"><button type="button" class="btn btn-info">Move to List</button></a>
+			<a href="/board"><button type="button" class="btn btn-info">게시판 목록</button></a>
 	</div>
 </body>
 </html>
