@@ -16,7 +16,7 @@ import java.util.List;
 
 @Controller
 public class BoardController {
-
+//ttt
 	@Autowired
 	BoardService service;
 	@GetMapping("/board")
