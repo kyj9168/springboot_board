@@ -23,14 +23,14 @@
 		<p>게시판을 작성해 주세요.</p>
 		<div>
 			<a href="/board/create"><button type="button"
-					class="btn btn-primary">Create</button></a>
+					class="btn btn-primary">작성</button></a>
 		</div>
 		<table class="table table-striped">
 			<thead>
 				<tr>
-					<th>Number</th>
-					<th>Title</th>
-					<th>Writer</th>
+					<th>NO</th>
+					<th>제목</th>
+					<th>작성자</th>
 				</tr>
 			</thead>
 			<tbody>

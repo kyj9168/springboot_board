@@ -20,19 +20,19 @@
 		<h2>게시판 작성 페이지</h2>
 		<form action="/board/create" method="post">
 			<div class="form-group">
-				<label for="form">Writer:</label> <input type="text"
-					class="form-control" id="writer" placeholder="Enter Writer"
+				<label for="form">작성자:</label> <input type="text"
+					class="form-control" id="writer" placeholder="작성자를 기입해 주세요."
 					name="b_writer">
 			</div>
 			<div class="form-group">
-				<label for="form">Title:</label> <input type="text"
-					class="form-control" id="title" placeholder="Enter Title"
+				<label for="form">제목:</label> <input type="text"
+					class="form-control" id="title" placeholder="제목을 작성해 주세요."
 					name="b_title">
 			</div>
 			<div class="form-group">
-				<label for="form">contents:</label>
+				<label for="form">내용:</label>
 				<textarea rows="20" cols="100" id="contents"
-					placeholder="Enter contents" name="b_contents"></textarea>
+					placeholder="내용을 작성해 주세요." name="b_contents"></textarea>
 			</div>
 			<button type="submit" class="btn btn-primary">작성</button>
 		</form>

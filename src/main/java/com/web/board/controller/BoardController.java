@@ -13,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.web.board.domain.Board;
 import com.web.board.service.BoardService;
+import org.springframework.web.servlet.view.RedirectView;
 
 @Controller
 public class BoardController {
@@ -37,7 +38,7 @@ public class BoardController {
 	@PostMapping("/board/create")
 	public ModelAndView createBoard(Board board) {
 		service.createBoard(board);
-		ModelAndView nextView = new ModelAndView("board/list");
+		ModelAndView nextView = new ModelAndView(new RedirectView("/board"));
 		List<Board> list = service.findAll();
 		nextView.addObject("boardList", list);
 		return nextView;
@@ -64,7 +65,7 @@ public class BoardController {
 	public ModelAndView updateBoard(@PathVariable("b_id") int b_id, Board board) {
 		System.out.println("updateBoard post");
 		service.updateBoard(b_id, board);
-		ModelAndView nextView = new ModelAndView("board/read");
+		ModelAndView nextView = new ModelAndView(new RedirectView("/board/"+b_id));
 		Board res = service.getOne(b_id);
 		nextView.addObject("board", res);
 		return nextView;
@@ -73,7 +74,7 @@ public class BoardController {
 	@GetMapping("/board/delete/{b_id}")
 	public ModelAndView deleteBoard(@PathVariable("b_id") int b_id) {
 		service.deleteOne(b_id);
-		ModelAndView nextView = new ModelAndView("board/list");
+		ModelAndView nextView = new ModelAndView(new RedirectView("/board"));
 		List<Board> list = service.findAll();
 		nextView.addObject("boardList", list);
 		return nextView;
