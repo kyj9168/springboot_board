@@ -28,71 +28,71 @@ public class Board {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "b_id")
-	private Integer b_id;
+	@Column(name = "id")
+	private Integer id;
 
-	@Column(name = "b_writer", nullable = false, length = 100)
-	private String b_writer;
+	@Column(name = "writer", nullable = false, length = 100)
+	private String writer;
 
-	@Column(name = "b_title", nullable = false, length = 100)
-	private String b_title;
+	@Column(name = "title", nullable = false, length = 100)
+	private String title;
 
-	@Column(name = "b_contents", nullable = false, length = 512)
-	private String b_contents;
+	@Column(name = "contents", nullable = false, length = 512)
+	private String contents;
 
 	@CreationTimestamp
-	@Column(name = "b_created_date")
-	private LocalDateTime b_created_date;
+	@Column(name = "created_date")
+	private LocalDateTime created_date;
 
 	@UpdateTimestamp
-	@Column(name = "b_update_date")
-	private LocalDateTime b_update_date;
+	@Column(name = "update_date")
+	private LocalDateTime update_date;
 
-	public Integer getB_id() {
-		return b_id;
+	public Integer getId() {
+		return id;
 	}
 
-	public void setB_id(Integer b_id) {
-		this.b_id = b_id;
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
-	public String getB_writer() {
-		return b_writer;
+	public String getWriter() {
+		return writer;
 	}
 
-	public void setB_writer(String b_writer) {
-		this.b_writer = b_writer;
+	public void setWriter(String writer) {
+		this.writer = writer;
 	}
 
-	public String getB_title() {
-		return b_title;
+	public String getTitle() {
+		return title;
 	}
 
-	public void setB_title(String b_title) {
-		this.b_title = b_title;
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
-	public String getB_contents() {
-		return b_contents;
+	public String getContents() {
+		return contents;
 	}
 
-	public void setB_contents(String b_contents) {
-		this.b_contents = b_contents;
+	public void setContents(String contents) {
+		this.contents = contents;
 	}
 
-	public LocalDateTime getB_created_date() {
-		return b_created_date;
+	public LocalDateTime getCreated_date() {
+		return created_date;
 	}
 
-	public void setB_created_date(LocalDateTime b_created_date) {
-		this.b_created_date = b_created_date;
+	public void setCreated_date(LocalDateTime created_date) {
+		this.created_date = created_date;
 	}
 
-	public LocalDateTime getB_update_date() {
-		return b_update_date;
+	public LocalDateTime getUpdate_date() {
+		return update_date;
 	}
 
-	public void setB_update_date(LocalDateTime b_update_date) {
-		this.b_update_date = b_update_date;
+	public void setUpdate_date(LocalDateTime update_date) {
+		this.update_date = update_date;
 	}
 }

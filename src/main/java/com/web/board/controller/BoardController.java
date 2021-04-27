@@ -1,7 +1,5 @@
 package com.web.board.controller;
 
-import java.util.List;
-
 import com.web.board.dto.BoardRequest;
 import com.web.board.dto.BoardResponse;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,12 +12,13 @@ import com.web.board.domain.Board;
 import com.web.board.service.BoardService;
 import org.springframework.web.servlet.view.RedirectView;
 
+import java.util.List;
+
 @Controller
 public class BoardController {
 
 	@Autowired
 	BoardService service;
-
 	@GetMapping("/board")
 	public ModelAndView boardList(){
 		List<Board> list = service.findAll();
@@ -43,36 +42,36 @@ public class BoardController {
 		return nextView;
 	}
 	
-	@GetMapping("/board/{b_id}")
-	public ModelAndView boardOneRead(@PathVariable("b_id") int b_id) {
-		BoardResponse boardResponse = service.getOne(b_id);
+	@GetMapping("/board/{id}")
+	public ModelAndView boardOneRead(@PathVariable("id") int id) {
+		BoardResponse boardResponse = service.getOne(id);
 		ModelAndView nextView = new ModelAndView("board/read");
 		nextView.addObject("board", boardResponse);
 		return nextView;
 	}
 	
-	@GetMapping("/board/update/{b_id}")
-	public ModelAndView updateBoard(@PathVariable("b_id") int b_id) {
+	@GetMapping("/board/update/{id}")
+	public ModelAndView updateBoard(@PathVariable("id") int id) {
 		System.out.println("updateBoard get");
-		BoardResponse boardResponse = service.getOne(b_id);
+		BoardResponse boardResponse = service.getOne(id);
 		ModelAndView nextView = new ModelAndView("board/update");
 		nextView.addObject("board", boardResponse);
 		return nextView;
 	}
 	
-	@PostMapping("/board/update/{b_id}")
-	public ModelAndView updateBoard(@PathVariable("b_id") Integer b_id, BoardRequest boardRequest) {
+	@PostMapping("/board/update/{id}")
+	public ModelAndView updateBoard(@PathVariable("id") Integer id, BoardRequest boardRequest) {
 		System.out.println("updateBoard post");
-		service.updateBoard(b_id, boardRequest);
-		ModelAndView nextView = new ModelAndView(new RedirectView("/board/"+b_id));
-		BoardResponse boardResponse = service.getOne(b_id);
+		service.updateBoard(id, boardRequest);
+		ModelAndView nextView = new ModelAndView(new RedirectView("/board/"+id));
+		BoardResponse boardResponse = service.getOne(id);
 		nextView.addObject("board", boardResponse);
 		return nextView;
 	}
 //	@DeleteMapping
-	@GetMapping("/board/delete/{b_id}")
-	public ModelAndView deleteBoard(@PathVariable("b_id") int b_id) {
-		service.deleteOne(b_id);
+	@GetMapping("/board/delete/{id}")
+	public ModelAndView deleteBoard(@PathVariable("id") int id) {
+		service.deleteOne(id);
 		ModelAndView nextView = new ModelAndView(new RedirectView("/board"));
 		List<Board> list = service.findAll();
 		nextView.addObject("boardList", list);

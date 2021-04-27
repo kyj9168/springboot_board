@@ -15,26 +15,31 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
+<style>
+	textarea {
+		width: 100%;
+	}
+</style>
 <body>
 	<div class="container">
-		<h2>No : ${board.b_id}</h2>
+		<h2>No : ${board.id}</h2>
 		<div class="form-group">
-			<label for="form">작성자: ${board.b_writer}</label>
+			<label for="form">작성자: ${board.writer}</label>
 		</div>
 		<div class="form-group">
-			<label for="form">제목: ${board.b_title}</label>
+			<label for="form">제목: ${board.title}</label>
 		</div>
 		<div class="form-group">
 			<label for="form">내용:</label>
-			<textarea rows="20" cols="100" id="contents" readonly="readonly">${board.b_contents}</textarea>
+			<textarea rows="20" cols="100" id="contents" readonly="readonly">${board.contents}</textarea>
 		</div>
 		<div class="form-group">
-			<label class="form">작성일 : ${board.b_created_date} </label>
-			<label class="form">수정일 : ${board.b_update_date} </label>
+			<label class="form">작성일 : ${board.created_date} </label>
+			<label class="form">수정일 : ${board.update_date} </label>
 		</div>
 		<div>
 		<a href="/board"><button type="button" class="btn btn-info">게시판 목록</button></a>
-		<a href="/board/update/${board.b_id}"><button type="button" class="btn btn-success">수정</button></a>
+		<a href="/board/update/${board.id}"><button type="button" class="btn btn-success">수정</button></a>
 		<button type="button" id="deleteBoard" class="btn btn-danger">삭제</button>
 		</div>
 	</div>
@@ -43,7 +48,7 @@
 $("#deleteBoard").click(function(){
 	var result = confirm("정말 삭제하시겠습니까?");
 	if(result){
-		location.href = '/board/delete/${board.b_id}';
+		location.href = '/board/delete/${board.id}';
 	}
 });
 </script>

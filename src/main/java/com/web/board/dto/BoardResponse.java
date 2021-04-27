@@ -9,10 +9,10 @@ import java.time.LocalDateTime;
 @Builder
 @AllArgsConstructor
 public class BoardResponse {
-    private Integer b_id;
-    private String b_writer;
-    private String b_title;
-    private String b_contents;
-    private LocalDateTime b_created_date;
-    private LocalDateTime b_update_date;
+    private Integer id;
+    private String writer;
+    private String title;
+    private String contents;
+    private LocalDateTime created_date;
+    private LocalDateTime update_date;
 }

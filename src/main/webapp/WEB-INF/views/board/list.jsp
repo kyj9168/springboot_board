@@ -16,6 +16,11 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
+<style>
+	textarea {
+		width: 100%;
+	}
+</style>
 <body>
 
 	<div class="container">
@@ -36,9 +41,9 @@
 			<tbody>
 				<c:forEach var="board" items="${boardList }">
 					<tr>
-						<td>${board.b_id }</td>
-						<td><a href="/board/${board.b_id}">${board.b_title }</a></td>
-						<td>${board.b_writer }</td>
+						<td>${board.id }</td>
+						<td><a href="/board/${board.id}">${board.title }</a></td>
+						<td>${board.writer }</td>
 					</tr>
 				</c:forEach>
 			</tbody>

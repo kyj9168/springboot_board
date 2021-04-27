@@ -15,31 +15,36 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
+<style>
+	textarea {
+		width: 100%;
+	}
+</style>
 <body>
 	<div class="container">
 		<h2>Update Board form</h2>
-		<form action="/board/update/${board.b_id}" method="post">
-			<input type="hidden" value="${board.b_id }" name="b_id">
+		<form action="/board/update/${board.id}" method="post">
+			<input type="hidden" value="${board.id }" name="id">
 
 			<div class="form-group">
 				<label for="form">Writer:</label> <input type="text"
-					class="form-control" id="writer" name="b_writer"
-					readonly="readonly" value="${board.b_writer }">
+					class="form-control" id="writer" name="writer"
+					readonly="readonly" value="${board.writer }">
 			</div>
 
 			<div class="form-group">
 				<label for="form">Title:</label> <input type="text"
-					class="form-control" id="title" name="b_title"
-					value="${board.b_title}">
+					class="form-control" id="title" name="title"
+					value="${board.title}">
 			</div>
 			<div class="form-group">
 				<label for="form">contents:</label>
-				<textarea rows="20" cols="100" id="contents" name="b_contents"
-				>${board.b_contents}</textarea>
+				<textarea rows="20" cols="100" id="contents" name="contents"
+				>${board.contents}</textarea>
 			</div>
 			<button type="submit" class="btn btn-primary">수정</button>
 		</form>
-		<a href="/board/${board.b_id}"><button type="button" class="btn btn-danger">취소</button></a>
+		<a href="/board/${board.id}"><button type="button" class="btn btn-danger">취소</button></a>
 		<a href="/board"><button type="button" class="btn btn-info">게시판 목록</button></a>
 	</div>
 </body>
