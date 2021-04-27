@@ -17,13 +17,9 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-/**
- * @author leeyoungseung
- *
- */
 @Entity
 @Table(name = "board")
-@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
+//@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 public class Board {
 
 	@Id
@@ -96,10 +92,3 @@ public class Board {
 		this.b_update_date = b_update_date;
 	}
 }
-/**
- * CREATE TABLE `board_test`.`board` ( `b_id` INT NOT NULL AUTO_INCREMENT ,
- * `b_writer` VARCHAR(100) NOT NULL , `b_title` VARCHAR(100) NOT NULL ,
- * `b_contents` TEXT NOT NULL , `b_created_date` DATETIME NOT NULL DEFAULT
- * CURRENT_TIMESTAMP , `b_update_date` DATETIME NOT NULL DEFAULT
- * CURRENT_TIMESTAMP , PRIMARY KEY (`b_id`)) ENGINE = InnoDB;
- */
