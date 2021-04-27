@@ -37,10 +37,10 @@
 				<textarea rows="20" cols="100" id="contents" name="b_contents"
 				>${board.b_contents}</textarea>
 			</div>
-			<button type="submit" class="btn btn-primary">Submit</button>
+			<button type="submit" class="btn btn-primary">수정</button>
 		</form>
-		<a href="/board/${board.b_id}"><button type="button" class="btn btn-danger">Cancel</button></a>
-		<a href="/board"><button type="button" class="btn btn-info">Move to List</button></a>
+		<a href="/board/${board.b_id}"><button type="button" class="btn btn-danger">취소</button></a>
+		<a href="/board"><button type="button" class="btn btn-info">게시판 목록</button></a>
 	</div>
 </body>
 </html>
