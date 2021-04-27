@@ -3,7 +3,10 @@ package com.web.board.service;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import com.web.board.dto.BoardRequest;
+import com.web.board.dto.BoardResponse;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.web.board.domain.Board;
@@ -20,24 +23,37 @@ public class BoardService {
 		return list;
 	}
 
-	public void createBoard(Board board) {
+	public void createBoard(BoardRequest boardRequest) {
+		Board board = Board.builder()
+				.b_id(boardRequest.getB_id())
+				.b_contents(boardRequest.getB_contents())
+				.b_writer(boardRequest.getB_writer())
+				.b_title(boardRequest.getB_title())
+				.b_created_date(boardRequest.getB_created_date())
+				.b_update_date(boardRequest.getB_update_date()).build();
+
 		boardRepo.save(board);
 	}
 
-	public Board getOne(int b_id) {
-		return boardRepo.getOne(b_id);
+	public BoardResponse getOne(int b_id) {
+		Board board = boardRepo.getOne(b_id);
+
+		return BoardResponse.builder()
+				.b_id(board.getB_id())
+				.b_contents(board.getB_contents())
+				.b_writer(board.getB_writer())
+				.b_title(board.getB_title())
+				.b_created_date(board.getB_created_date())
+				.b_update_date(board.getB_update_date()).build();
 	}
 
-	public void updateBoard(int b_id, Board new_board) {
-		boardRepo.findById((int)b_id)
+	public void updateBoard(Integer b_id, BoardRequest new_board) {
+		boardRepo.findById(b_id)
 		.map(board -> {
 			board.setB_title(new_board.getB_title());
 			board.setB_contents(new_board.getB_contents());
 			board.setB_update_date(LocalDateTime.now());
 			return boardRepo.save(board);
-		}).orElseGet(()->{
-			new_board.setB_id(b_id);
-			return boardRepo.save(new_board);
 		});
 	}
 

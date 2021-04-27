@@ -12,6 +12,8 @@ import javax.persistence.Table;
 import jdk.nashorn.internal.objects.annotations.Getter;
 import jdk.nashorn.internal.objects.annotations.Setter;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -19,7 +21,9 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name = "board")
-//@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Board {
 
 	@Id
